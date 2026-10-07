@@ -1,0 +1,57 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "BD Notlar",
+  "version": "1.0.0",
+  "identifier": "com.smartnotes.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1421",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "BD Notlar",
+        "width": 1280,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false,
+        "dragDropEnabled": false,
+        "backgroundColor": "#09090b",
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "publisher": "BD Studio",
+    "copyright": "Copyright © 2026 BD Studio",
+    "category": "Productivity",
+    "shortDescription": "BD Notlar - akıllı not alma uygulaması",
+    "longDescription": "BD Notlar ile notlarınızı hızlıca oluşturun, düzenleyin ve yönetin.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "offlineInstaller"
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["Turkish", "English"]
+      },
+      "wix": {
+        "language": "tr-TR"
+      }
+    }
+  }
+}
